@@ -20,13 +20,18 @@ import com.hugheswd.andrewapp.ui.screens.MainActivityUI
 fun RootLayout(viewModel: MainViewModel) {
     val navController = rememberNavController()
     val foo by viewModel.foo.collectAsState()
+    val isNameFromAndreas by viewModel.isUserNameFromAndreas.collectAsState()
     
     NavHost(
         navController = navController, 
         startDestination = BaseNavRoute.HOME.id
     ) {
         composable(BaseNavRoute.HOME.id) {
-            MainActivityUI(foo)
+            MainActivityUI(
+                foo = foo,
+                isNameFromAndreas = isNameFromAndreas,
+                checkIsNameFromAndreas = viewModel::isNameFromAndreas
+            )
         }
 
         composable(BaseNavRoute.NOT_HOME.id) {

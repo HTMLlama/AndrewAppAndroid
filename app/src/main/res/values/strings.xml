@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Andrew App</string>
+
+    <string name="submit">Submit</string>
+
+    <string name="intro_question">What is your first name?…</string>
+    <string name="intro_question_hint">It should probably be close to Andrew</string>
+    <string name="intro_answer_positive">Welcome fellow Drewd!</string>
+    <string name="intro_answer_negative">We\'re sorry but your name must derive from the Greek name Andreas.</string>
 </resources>
