@@ -1,8 +1,6 @@
 
 plugins {
-
     id("kotlin-android")
-    id("kotlin-android-extensions")
     id("com.android.application")
     id("dagger.hilt.android.plugin")
     kotlin("kapt")
@@ -11,13 +9,13 @@ plugins {
 }
 
 android {
-    compileSdk = 33
-    buildToolsVersion = "30.0.3"
+    compileSdk = 34
+    buildToolsVersion = "34.0.0"
 
     defaultConfig {
         applicationId = "com.hugheswd.andrewapp"
         minSdk = 28
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -46,9 +44,9 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = rootProject.extra["compose_version"] as String
-    }
+//    composeOptions {
+//        kotlinCompilerExtensionVersion = rootProject.extra["compose_version"] as String
+//    }
     namespace = "com.hugheswd.andrewapp"
 }
 
@@ -59,49 +57,49 @@ dependencies {
     implementation ("androidx.legacy:legacy-support-v4:1.0.0")
 
     // Android
-    implementation ("androidx.core:core-ktx:1.9.0")
-    implementation ("androidx.appcompat:appcompat:1.5.1")
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
-    implementation ("com.google.android.material:material:1.7.0")
+    implementation ("androidx.core:core-ktx:1.13.1")
+    implementation ("androidx.appcompat:appcompat:1.7.0")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3")
+    implementation ("com.google.android.material:material:1.12.0")
     implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
     testImplementation ("junit:junit:4.13.2")
-    androidTestImplementation ("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation ("androidx.test.espresso:espresso-core:3.4.0")
+    androidTestImplementation ("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation ("androidx.test.espresso:espresso-core:3.6.1")
     implementation("androidx.multidex:multidex:2.0.1")
 
     // Compose
-    implementation("androidx.navigation:navigation-compose:2.5.3")
-    implementation("androidx.compose.ui:ui:${rootProject.extra["compose_version"]}")
-    implementation("androidx.compose.material:material:${rootProject.extra["compose_version"]}")
-    implementation("androidx.compose.ui:ui-tooling:${rootProject.extra["compose_version"]}")
-    implementation("androidx.compose.runtime:runtime:${rootProject.extra["compose_runtime_version"]}")
-    implementation("androidx.compose.runtime:runtime-livedata:${rootProject.extra["compose_runtime_version"]}")
-    implementation("androidx.compose.runtime:runtime-rxjava2:${rootProject.extra["compose_runtime_version"]}")
-    implementation("androidx.activity:activity-compose:1.6.1")
-    implementation("androidx.compose.material3:material3:1.1.0-alpha01")
-    implementation("androidx.compose.material3:material3-window-size-class:1.1.0-alpha01")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:${rootProject.extra["compose_version"]}")
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation("androidx.compose.ui:ui:1.6.8")
+    implementation("androidx.compose.material:material:1.6.8")
+    implementation("androidx.compose.ui:ui-tooling:1.6.8")
+    implementation("androidx.compose.runtime:runtime:1.6.8")
+    implementation("androidx.compose.runtime:runtime-livedata:1.6.8")
+    implementation("androidx.compose.runtime:runtime-rxjava2:1.6.8")
+    implementation("androidx.activity:activity-compose:1.9.0")
+    implementation("androidx.compose.material3:material3:1.2.1")
+    implementation("androidx.compose.material3:material3-window-size-class:1.2.1")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.6.8")
 
     // Coil
-    implementation("io.coil-kt:coil-compose:${rootProject.extra["coil_version"]}")
-    implementation("io.coil-kt:coil-gif:${rootProject.extra["coil_version"]}")
+    implementation("io.coil-kt:coil-compose:2.2.1")
+    implementation("io.coil-kt:coil-gif:2.2.1")
 
     // Kotlin
-    implementation ("androidx.navigation:navigation-fragment-ktx:${rootProject.extra["nav_version"]}")
-    implementation ("androidx.navigation:navigation-ui-ktx:${rootProject.extra["nav_version"]}")
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.7.7")
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:${rootProject.extra["hilt_version"]}")
-    kapt("com.google.dagger:hilt-android-compiler:${rootProject.extra["hilt_version"]}")
+    implementation("com.google.dagger:hilt-android:2.43.2")
+    kapt("com.google.dagger:hilt-android-compiler:2.43.2")
 
     // Feature module Support
-    implementation ("androidx.navigation:navigation-dynamic-features-fragment:${rootProject.extra["nav_version"]}")
+    implementation ("androidx.navigation:navigation-dynamic-features-fragment:2.7.7")
 
     // Testing Navigation
-    androidTestImplementation ("androidx.navigation:navigation-testing:${rootProject.extra["nav_version"]}")
+    androidTestImplementation ("androidx.navigation:navigation-testing:2.7.7")
 
     // Jetpack Compose Integration
-    implementation ("androidx.navigation:navigation-compose:${rootProject.extra["nav_version"]}")
+    implementation ("androidx.navigation:navigation-compose:2.7.7")
     implementation ("com.google.accompanist:accompanist-systemuicontroller:0.17.0")
 
     // Swipe to refresh
@@ -110,8 +108,5 @@ dependencies {
     // Square
     implementation ("com.squareup.okhttp3:okhttp:4.10.0")
     implementation ("ru.gildor.coroutines:kotlin-coroutines-okhttp:1.0")
-
-    // XML
-//    implementation ("com.github.smart-fun:XmlToJson:1.5.1")
 
 }
